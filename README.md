@@ -7,9 +7,9 @@ This is the repository for microstructure characterization research II since May
 
 ## Publication
 
-This repo contains code for reproducing key results in ![Image driven machine learning based microstructure recognition and quantification on small datasets](#).
+This repo contains code for reproducing key results in [Image driven machine learning based microstructure recognition and quantification on small datasets](#).
 
-Our previous work: ![An image-driven machine learning approach to kinetic modeling of a discontinuous precipitation reaction](https://arxiv.org/abs/1906.05496).
+Our previous work: [An image-driven machine learning approach to kinetic modeling of a discontinuous precipitation reaction](https://arxiv.org/abs/1906.05496).
 
 ## Feature Engineering for Image Classification
 

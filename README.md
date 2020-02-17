@@ -15,7 +15,7 @@ Our previous work: [An image-driven machine learning approach to kinetic modelin
 
 ### Resources
 
-### Train a Classification Model
+### Binary Classification
 
 ### Visualization of Training Outputs
 

@@ -15,9 +15,24 @@ Our previous work: [An image-driven machine learning approach to kinetic modelin
 
 ### Resources
 
+### Train a Classification Model
+
+### Visualization of Training Outputs
+
+#### Plot the confusion matrix for binary classification
+
+Before this step, make sure you have trained a binary classification model and have the confusion matrix results ready.
+
+To plot the confusion matrix, run
+
+```shell script
+python3 plot/confusion_matrix.py
+```
+
+The output figure will be saved to the ```./figures``` directory.
+
 ## Representation Learning with GANs
 
 ### Resources
 
 ### System requirements
-

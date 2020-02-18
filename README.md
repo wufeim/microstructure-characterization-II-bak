@@ -15,6 +15,10 @@ Our previous work: [An image-driven machine learning approach to kinetic modelin
 
 ### Resources
 
+- train.py
+- classification
+  - binary_classification.py
+
 ### Binary Classification
 
 ### Visualization of Training Outputs

@@ -43,8 +43,15 @@ def crop_image(image):
         raise Exception("Unknown image size: {}".format(image.shape))
 
 
-def segmentation(image_name, median_filter_size=(5, 5, 1), gaussian_sigma=4):
+def load_features_from_file(feature_file, feature_list):
+    df = pd.read_csv(feature_file)
+    return df[['met_id', 'img_name'] + feature_list]
 
+
+def segmentation(image_name, median_filter_size=(5, 5, 1), gaussian_sigma=4):
+    """
+    Depreciated segmentation method.
+    """
     img = cv2.imread(image_name)
     if img is None:
         raise Exception("Image {:s} cannot be opened/read.".format(image_name))
@@ -73,7 +80,6 @@ def segmentation(image_name, median_filter_size=(5, 5, 1), gaussian_sigma=4):
 
 
 def generate_data(met_id, data_dir, dst):
-
     rows = pd.read_csv(IMAGE_CSV, index_col=0)
     rows = rows.loc[rows['met_id'] == met_id]
     rows = rows.loc[rows['img_proc'].isin(['LBE', 'LABE'])]

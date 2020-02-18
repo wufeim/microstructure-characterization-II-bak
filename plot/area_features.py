@@ -44,7 +44,7 @@ def plot_area_features(feature_file, mode, output_filename):
     if output_filename.endswith('.html'):
         pio.write_html(fig, output_filename)
     elif output_filename.endswith('.png'):
-        img_str = fig.to_image(format='png', scale=4)
+        img_str = fig.to_image(format='png', scale=2)
         arr = np.frombuffer(img_str, np.uint8)
         img = cv2.imdecode(arr, cv2.IMREAD_COLOR)
         cv2.imwrite(output_filename, img)

@@ -22,7 +22,7 @@ from IPython.display import Image
 import utils
 
 
-def plot_area_features(feature_file, mode, output_filename):
+def plot_area_features(feature_file, mode, output_filename, scale=4):
     feature_list = ['area_0', 'area_1', 'area_2']
     df = utils.load_features_from_file(feature_file, feature_list)
     if mode == '10_class':
@@ -44,7 +44,7 @@ def plot_area_features(feature_file, mode, output_filename):
     if output_filename.endswith('.html'):
         pio.write_html(fig, output_filename)
     elif output_filename.endswith('.png'):
-        img_str = fig.to_image(format='png', scale=2)
+        img_str = fig.to_image(format='png', scale=scale)
         arr = np.frombuffer(img_str, np.uint8)
         img = cv2.imdecode(arr, cv2.IMREAD_COLOR)
         cv2.imwrite(output_filename, img)
@@ -80,9 +80,16 @@ if __name__ == '__main__':
         metavar='output_filename',
         help='the format and name of the output, \'html\' or \'png\''
     )
+    parser.add_argument(
+        '--scale',
+        type=int,
+        metavar='scale',
+        help='specify the scale of the output image (ignored when output as HTML)'
+    )
     args = parser.parse_args()
     plot_area_features(
         args.feature_file,
         args.mode,
-        args.output_filename
+        args.output_filename,
+        args.scale
     )

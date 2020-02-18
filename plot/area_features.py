@@ -7,6 +7,8 @@
 import os
 import sys
 
+import argparse
+
 import numpy as np
 import pandas as pd
 
@@ -52,6 +54,35 @@ def plot_area_features(feature_file, mode, output_filename):
 
 if __name__ == '__main__':
 
+    """Example Usage
     feature_file = '../results/all_features.csv'
     plot_area_features(feature_file, '10_class', '../figures/area_features_10_class.png')
     plot_area_features(feature_file, 'binary', '../figures/area_features_binary.png')
+    """
+
+    parser = argparse.ArgumentParser(description='Visualization of area features.')
+    parser.add_argument(
+        'feature_file',
+        type=str,
+        metavar='feature_file',
+        help='the prepared feature file to be plotted'
+    )
+    parser.add_argument(
+        'mode',
+        type=str,
+        metavar='mode',
+        help='the mode to plot the area features, \'10_class\' or \'binary\'',
+        choices=['10_class', 'binary']
+    )
+    parser.add_argument(
+        'output_filename',
+        type=str,
+        metavar='output_filename',
+        help='the format and name of the output, \'html\' or \'png\''
+    )
+    args = parser.parse_args()
+    plot_area_features(
+        args.feature_file,
+        args.mode,
+        args.output_filename
+    )

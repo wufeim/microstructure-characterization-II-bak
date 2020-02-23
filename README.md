@@ -27,6 +27,20 @@ After segmentation, we extract area and shape information from
 
 ### Binary Classification
 
+### Visualization
+
+#### Area features
+
+After features are extracted, you can plot the area features by running
+
+```shell script
+python plot/area_features.py results/area_featurs.csv binary figures/area_features_binary.png
+```
+
+![Area features (10 classes)](figures/area_features_10_class.png)
+
+Run ```python plot/area_features.py -h``` for help. The supported output format are PNG (for static image output) and HTML (for interactive plot).
+
 ### Visualization of Training Outputs
 
 #### Plot the confusion matrix for binary classification
@@ -36,7 +50,7 @@ Before this step, make sure you have trained a binary classification model and h
 To plot the confusion matrix, run
 
 ```shell script
-python3 plot/confusion_matrix.py
+python plot/confusion_matrix.py
 ```
 
 The output figure will be saved to the ```./figures``` directory.

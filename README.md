@@ -53,6 +53,8 @@ To plot the confusion matrix, run
 python plot/confusion_matrix.py
 ```
 
+![Confusion matrix](figures/binary_classification_results_f1.png)
+
 The output figure will be saved to the ```./figures``` directory.
 
 ## Representation Learning with GANs

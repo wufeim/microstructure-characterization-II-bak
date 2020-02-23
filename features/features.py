@@ -127,9 +127,9 @@ def phase_specific(image_name, d=15, sigma_color=75, sigma_space=75):
         np.std(stats[1:, -1]),      # std of region areas               2
         np.std(centroids[1:, 0]),   # std of the x-axis of centroid     3
         np.std(centroids[1:, 1]),   # std of the y-axis of centroids    4
-        # mean and std of (width * height / area)
-        np.mean(stats[1:, 2] * stats[1:, 3] / stats[1:, 4]),          # 5
-        np.std(stats[1:, 2] * stats[1:, 3] / stats[1:, 4])            # 6
+        # mean and std of (area / (width * height))
+        np.mean(stats[1:, 4] / (stats[1:, 2] / stats[1:, 3])),        # 5
+        np.std(stats[1:, 4] / (stats[1:, 2] / stats[1:, 3]))          # 6
     ]
 
     connectivity = 8
@@ -141,9 +141,9 @@ def phase_specific(image_name, d=15, sigma_color=75, sigma_space=75):
         np.std(stats[1:, -1]),  # std of region areas                   9
         np.std(centroids[1:, 0]),  # std of the x-axis of centroid     10
         np.std(centroids[1:, 1]),  # std of the y-axis of centroids    11
-        # mean and std of (width * height / area)
-        np.mean(stats[1:, 2] * stats[1:, 3] / stats[1:, 4]),         # 12
-        np.std(stats[1:, 2] * stats[1:, 3] / stats[1:, 4])           # 13
+        # mean and std of (area / (width * height))
+        np.mean(stats[1:, 4] / (stats[1:, 2] * stats[1:, 3])),       # 12
+        np.std(stats[1:, 4] / (stats[1:, 2] / stats[1:, 3]))         # 13
     ]
     return f
 

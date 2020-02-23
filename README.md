@@ -15,6 +15,9 @@ Our previous work: [An image-driven machine learning approach to kinetic modelin
 
 ### Resources
 
+#### Phase-specific Features
+
+After segmentation, we extract area and shape information from
 - ```train.py```
 - features
   - ```__init__.py```
@@ -24,31 +27,17 @@ Our previous work: [An image-driven machine learning approach to kinetic modelin
 
 ### Binary Classification
 
-### Visualization
-
-#### Area features
-
-After features are extracted, you can plot the area features by running
-
-```shell script
-python plot/area_features.py results/area_featurs.csv binary figures/area_features_binary.png
-```
-
-![Area features (10 classes)](figures/area_features_10_class.png)
-
-Run ```python plot/area_features.py -h``` for help. The supported output format are PNG (for static image output) and HTML (for interactive plot).
+### Visualization of Training Outputs
 
 #### Plot the confusion matrix for binary classification
 
 Before this step, make sure you have trained a binary classification model and have the confusion matrix results ready.
 
-To plot the confusion matrix, simply run
+To plot the confusion matrix, run
 
 ```shell script
-python plot/confusion_matrix.py
+python3 plot/confusion_matrix.py
 ```
-
-![Confusion matrix](figures/binary_classification_results_f1.png)
 
 The output figure will be saved to the ```./figures``` directory.
 
